@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+  - "7"
+dist: trusty
+sudo: false
+#addons:
+#  chrome: stable
+git:
+  depth: 1
+cache:
+  directories:
+  - node_modules
+# before_install:
+#   - # start your web application and listen on `localhost:3000`
+#   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost:3000
+install:
+  - npm install
+script:
+  - npm run test
+# after_success:
+#   - ./travis/deploy_pr_gae.sh
+#   - export LH_MIN_PASS_SCORE=96
+#   - export LH_TEST_URL=https://lighthouse-ci-staging-dot-cr-status.appspot.com/features
+#   - node node_modules/lighthouse-ci/runlighthouse.js --runner=wpt --score=$LH_MIN_PASS_SCORE $LH_TEST_URL
