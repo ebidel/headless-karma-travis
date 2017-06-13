@@ -3,18 +3,19 @@ node_js:
   - "7"
 dist: trusty
 sudo: false
-#addons:
-#  chrome: stable
+addons:
+  chrome: stable
 git:
   depth: 1
 cache:
+  yarn: true
   directories:
-  - node_modules
+    - node_modules
 # before_install:
 #   - # start your web application and listen on `localhost:3000`
 #   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost:3000
 install:
-  - npm install
+  - yarn
 script:
   - npm run test
 # after_success:
