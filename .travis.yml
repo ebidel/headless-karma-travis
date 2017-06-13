@@ -18,8 +18,3 @@ install:
   - yarn
 script:
   - npm run test
-# after_success:
-#   - ./travis/deploy_pr_gae.sh
-#   - export LH_MIN_PASS_SCORE=96
-#   - export LH_TEST_URL=https://lighthouse-ci-staging-dot-cr-status.appspot.com/features
-#   - node node_modules/lighthouse-ci/runlighthouse.js --runner=wpt --score=$LH_MIN_PASS_SCORE $LH_TEST_URL
